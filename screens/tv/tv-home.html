@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WAO IPTV - Android TV Leanback</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet"/>
+  <style>
+    body { background-color: #060911; font-family: 'Outfit', sans-serif; color: #fff; overflow-x: hidden; }
+    .tv-card:focus, .tv-card.focused { outline: 4px solid #00e5ff; transform: scale(1.05); box-shadow: 0 0 25px rgba(0, 229, 255, 0.4); }
+    .hide-scroll::-webkit-scrollbar { display: none; }
+  </style>
+</head>
+<body class="flex min-h-screen">
+
+  <!-- D-Pad Left Navigation Rail -->
+  <aside class="w-24 bg-[#0a0e1a] border-r border-slate-800 flex flex-col items-center py-8 justify-between z-30">
+    <div class="w-12 h-12 rounded-2xl bg-cyan-400 text-slate-950 flex items-center justify-center font-black text-xl shadow-lg shadow-cyan-400/30">
+      <i class="fa-solid fa-play"></i>
+    </div>
+
+    <nav class="flex flex-col gap-6">
+      <button class="tv-card focused w-12 h-12 rounded-2xl bg-cyan-400 text-slate-950 flex items-center justify-center text-lg transition">
+        <i class="fa-solid fa-house"></i>
+      </button>
+      <a href="tv-quad-view.html" class="tv-card w-12 h-12 rounded-2xl bg-slate-900 text-slate-400 hover:text-white flex items-center justify-center text-lg transition">
+        <i class="fa-solid fa-table-cells"></i>
+      </a>
+      <a href="tv-quad-view.html" class="tv-card w-12 h-12 rounded-2xl bg-slate-900 text-slate-400 hover:text-white flex items-center justify-center text-lg transition">
+        <i class="fa-solid fa-film"></i>
+      </a>
+    </nav>
+
+    <div class="text-[10px] text-slate-500 font-bold">16:9 TV</div>
+  </aside>
+
+  <!-- 16:9 Main Hero & Live Rails -->
+  <main class="flex-1 p-8">
+    <div class="relative rounded-3xl overflow-hidden aspect-[21/9] shadow-2xl border border-white/10 mb-8">
+      <img src="https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?w=1400&fit=crop" class="w-full h-full object-cover"/>
+      <div class="absolute inset-0 bg-gradient-to-t from-[#060911] via-[#060911]/40 to-transparent"></div>
+      <div class="absolute bottom-8 left-8 max-w-xl">
+        <span class="px-3 py-1 rounded-md text-xs font-black uppercase bg-cyan-400 text-slate-950">
+          FEATURED PREMIERE
+        </span>
+        <h2 class="text-4xl font-extrabold text-white mt-2">Dune: Part Two (4K IMAX)</h2>
+        <p class="text-sm text-slate-300 mt-2">Paul Atreides unites with Chani and the Fremen while seeking revenge against the conspirators who destroyed his family.</p>
+        <div class="flex items-center gap-4 mt-5">
+          <a href="tv-quad-view.html" class="tv-card px-6 py-3 rounded-xl bg-cyan-400 text-slate-950 font-bold text-sm flex items-center gap-2">
+            <i class="fa-solid fa-play"></i> Watch Now
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <h3 class="text-base font-bold uppercase tracking-wider text-slate-400 mb-4">Live Channels (D-Pad Select)</h3>
+      <div class="flex gap-5 overflow-x-auto hide-scroll pb-4">
+        <div class="tv-card w-64 flex-shrink-0 bg-slate-900/80 rounded-2xl p-3 border border-slate-800 transition">
+          <div class="relative rounded-xl overflow-hidden aspect-video mb-2">
+            <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=500&fit=crop" class="w-full h-full object-cover"/>
+            <span class="absolute top-2 left-2 px-2 py-0.5 rounded text-[10px] font-black bg-red-600">LIVE</span>
+          </div>
+          <h4 class="font-bold text-sm text-white">Sky Sports UHD</h4>
+          <p class="text-xs text-slate-400">AUS vs IND • T20 Super 8</p>
+        </div>
+
+        <div class="tv-card w-64 flex-shrink-0 bg-slate-900/80 rounded-2xl p-3 border border-slate-800 transition">
+          <div class="relative rounded-xl overflow-hidden aspect-video mb-2">
+            <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=500&fit=crop" class="w-full h-full object-cover"/>
+            <span class="absolute top-2 left-2 px-2 py-0.5 rounded text-[10px] font-black bg-red-600">LIVE</span>
+          </div>
+          <h4 class="font-bold text-sm text-white">beIN Sports 1 English</h4>
+          <p class="text-xs text-slate-400">UEFA Champions League Final</p>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
